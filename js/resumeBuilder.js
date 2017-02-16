@@ -119,28 +119,29 @@ education.display = function() {
             $(".education-entry:last").append(formattedDates);
         }
     }
-    if (education.onlineCourses.length > 0) {
+    //if (education.onlineCourses.length > 0) {
+
+        for (i = 0; i < education.onlineCourses.length; i += 1) {
         var formattedSchool;
         var formattedURL;
         var formattedTitle;
-        var formattedODates;
+        var formattedOdates;
 
-        for (i = 0; i < education.onlineCourses.length; i += 1) {
             $("#online-education").append(HTMLonlineClasses);
 
             formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
             //formattedURL = HTMLonlineURL.replace("#", education.onlineCourses[i].url).replace("%data%", "see profile");
             formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
-            formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+            formattedOdates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
             formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 
             $(".education-entry:last").append(formattedTitle);
             $(".education-entry:last").append(formattedSchool);
-            $(".education-entry:last").append(formattedDates);
+            $(".education-entry:last").append(formattedOdates);
             $(".education-entry:last").append(formattedURL);
 
         }
-    }
+   // }
 };
 education.display();
 
@@ -173,7 +174,7 @@ var work = {
 
 function displayWork() {
     if (work.jobs.length > 0) {
-        for (var job in work.jobs) {
+            for (var jobs = 0; jobs < work.jobs.length; jobs += 1){
             $("#workExperience").append(HTMLworkStart);
             var formattedEmpolyer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -223,8 +224,9 @@ var projects = {
 };
 
 projects.display = function() {
-    if (projects.projects.length > 0) {
-        for (var project in projects.projects) {
+    //if (projects.projects.length > 0) {
+        //for (var project in projects.projects)
+        for (var projects = 0; projects < projects.projects.length; projects += 1) {
             $("#projects").append(HTMLprojectStart);
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             $(".project-entry:last").append(formattedTitle);
@@ -233,13 +235,14 @@ projects.display = function() {
             var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
             $(".project-entry:last").append(formattedDescription);
             if (projects.projects[project].images.length > 0) {
-                for (var image in projects.projects[project].images) {
+                //for (var image in projects.projects[project].images)
+                for (var image = 0; image < projects.projects[project].images; image += 1){
                     var formattedprojectImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
                     $(".project-entry:last").append(formattedprojectImages);
                 }
             }
         }
-    }
+    //}
 };
 projects.display();
 
