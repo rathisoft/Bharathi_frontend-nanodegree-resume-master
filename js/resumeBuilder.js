@@ -176,7 +176,7 @@ function displayWork() {
     if (work.jobs.length > 0) {
             for (var jobs = 0; jobs < work.jobs.length; jobs += 1){
             $("#workExperience").append(HTMLworkStart);
-            var formattedEmpolyer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedEmpolyer = HTMLworkEmployer.replace("%data%", work.jobs[jobs].employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
             var formattedEmpolyerTitle = formattedEmpolyer + formattedTitle;
             $(".work-entry:last").append(formattedEmpolyerTitle);
